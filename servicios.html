@@ -4,27 +4,220 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ballester Digital - Servicios</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #0073e6; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; margin-left: 1rem; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 1rem; max-width: 900px; margin: auto; }
-    .services { display: flex; flex-wrap: wrap; gap: 1rem; }
-    .service { flex: 1 1 250px; background: #f0f0f0; padding: 1rem; border-radius: 8px; }
-    footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    /* Reset y básicos */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background: #f9faff;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #005bb5;
+    }
+
+    /* Header */
+    header {
+      background: #0073e6;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      position: relative;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo .material-icons {
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      margin-left: 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    nav a .material-icons {
+      font-size: 1.2rem;
+    }
+
+    /* Botón hamburguesa */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      justify-content: space-between;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    /* Main contenido */
+    main {
+      flex-grow: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    main h1 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: #004a99;
+      letter-spacing: 1.5px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .service {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      flex: 1 1 280px;
+      max-width: 320px;
+      transition: transform 0.3s ease;
+      cursor: default;
+      text-align: left;
+    }
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+    .service h2 {
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      color: #004a99;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .service h2 .material-icons {
+      color: #0073e6;
+      font-size: 28px;
+    }
+    .service p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      background: #004a99;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-top: auto;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav a {
+        margin-left: 1.5rem;
+        font-size: 0.9rem;
+      }
+      main h1 {
+        font-size: 2.2rem;
+      }
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service {
+        max-width: 100%;
+      }
+    }
+
+    /* Responsive menú hamburguesa */
     @media (max-width: 600px) {
-      .services { flex-direction: column; }
+      nav {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background: #0073e6;
+        flex-direction: column;
+        width: 200px;
+        padding-top: 1rem;
+        height: calc(100% - 60px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+      }
+      nav.open {
+        transform: translateX(0);
+      }
+      nav a {
+        margin: 1rem 0;
+        font-size: 1.1rem;
+        padding-left: 1.5rem;
+      }
+      .menu-toggle {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Ballester Digital</div>
+    <div class="logo">
+      <span class="material-icons">desktop_mac</span>
+      Ballester Digital
+    </div>
+
+    <div class="menu-toggle" aria-label="Abrir menú" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="index.html"><span class="material-icons">home</span>Inicio</a>
+      <a href="servicios.html"><span class="material-icons">build_circle</span>Servicios</a>
+      <a href="contacto.html"><span class="material-icons">email</span>Contacto</a>
     </nav>
   </header>
 
@@ -32,27 +225,27 @@
     <h1>Servicios</h1>
     <section class="services">
       <div class="service">
-        <h2>Reparación de computadoras</h2>
+        <h2><span class="material-icons">build</span>Reparación de computadoras</h2>
         <p>Reparación de computadoras de escritorio y notebooks con diagnósticos precisos y soluciones eficaces.</p>
       </div>
       <div class="service">
-        <h2>Armado a pedido</h2>
+        <h2><span class="material-icons">settings_input_component</span>Armado a pedido</h2>
         <p>Armado personalizado de PC para oficina y gamer, adaptado a tus necesidades y presupuesto.</p>
       </div>
       <div class="service">
-        <h2>Formateo e instalación</h2>
+        <h2><span class="material-icons">restart_alt</span>Formateo e instalación</h2>
         <p>Formateo de equipos, limpieza interna de hardware e instalación de sistemas operativos y software.</p>
       </div>
       <div class="service">
-        <h2>Mantenimiento preventivo</h2>
+        <h2><span class="material-icons">build_circle</span>Mantenimiento preventivo</h2>
         <p>Mantenimiento regular para evitar fallos y optimizar el rendimiento de tus dispositivos.</p>
       </div>
       <div class="service">
-        <h2>Actualizaciones de hardware</h2>
+        <h2><span class="material-icons">upgrade</span>Actualizaciones de hardware</h2>
         <p>Mejora el rendimiento con actualizaciones de componentes y hardware.</p>
       </div>
       <div class="service">
-        <h2>Recuperación de datos</h2>
+        <h2><span class="material-icons">data_saver_on</span>Recuperación de datos</h2>
         <p>Recuperación de datos perdida o dañados con métodos seguros y confiables.</p>
       </div>
     </section>
@@ -61,5 +254,14 @@
   <footer>
     <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
   </footer>
-</body>
-</html>
+
+  <script>
+    // Toggle menú hamburguesa
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+   
