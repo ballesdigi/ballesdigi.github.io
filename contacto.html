@@ -2,158 +2,152 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ballester Digital - Contacto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Material+Symbols+Rounded" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f9faff;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fc;
+      color: #222;
     }
-    a { text-decoration: none; color: #0073e6; }
     header {
-      background: #0073e6;
+      background-color: #0066cc;
+      padding: 1rem 1.5rem;
       color: white;
-      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      position: relative;
+      justify-content: space-between;
     }
     .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
     }
     nav a {
       color: white;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+      text-decoration: none;
+      font-weight: 500;
     }
-
-    .menu-icon {
+    nav a:visited {
+      color: white;
+    }
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+      color: #e0e0e0;
+    }
+    nav a.active {
+      border-bottom: 2px solid white;
+    }
+    .menu-toggle {
       display: none;
       font-size: 2rem;
       cursor: pointer;
     }
-
+    .main {
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    .main h1 {
+      font-size: 2rem;
+      color: #003366;
+      text-align: center;
+    }
+    .contacto-info {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .material-symbols-rounded {
+      font-size: 2rem;
+      color: #0066cc;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 99;
+    }
+    .whatsapp img {
+      width: 60px;
+      height: 60px;
+    }
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
-        background: #0073e6;
+        background-color: #0066cc;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
-        width: 100%;
+        left: 0;
         padding: 1rem;
       }
       nav.open {
         display: flex;
       }
-      .menu-icon {
+      .menu-toggle {
         display: block;
       }
-    }
-
-    main {
-      flex-grow: 1;
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #004a99;
-      margin-bottom: 2rem;
-    }
-
-    .contact-info {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 1.2rem;
-      margin: 1rem 0;
-      color: #444;
-    }
-
-    .info-item .material-icons {
-      font-size: 2rem;
-      color: #0073e6;
-    }
-
-    footer {
-      background: #004a99;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      margin-top: auto;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <span class="material-icons">desktop_mac</span>
-      Ballester Digital
-    </div>
-    <span class="material-icons menu-icon" id="menuToggle">menu</span>
+    <div class="logo">💻 Ballester Digital</div>
+    <span class="menu-toggle material-symbols-rounded" tabindex="0">menu</span>
     <nav id="nav">
-      <a href="index.html"><span class="material-icons">home</span>Inicio</a>
-      <a href="servicios.html"><span class="material-icons">build_circle</span>Servicios</a>
-      <a href="contacto.html"><span class="material-icons">email</span>Contacto</a>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html" class="active">Contacto</a>
     </nav>
   </header>
 
-  <main>
+  <div class="main">
     <h1>Contacto</h1>
-    <div class="contact-info">
+
+    <div class="contacto-info">
       <div class="info-item">
-        <span class="material-icons">email</span>
-        <span>ballesterdigital@gmail.com</span>
+        <span class="material-symbols-rounded">mail</span>
+        <div>
+          <strong>Email:</strong><br/>
+          <a href="mailto:ballesterdigital@gmail.com">ballesterdigital@gmail.com</a>
+        </div>
       </div>
+
       <div class="info-item">
-        <span class="material-icons">phone_iphone</span>
-        <span>+54 9 11 7100 1865</span>
-      </div>
-      <div class="info-item">
-        <span class="material-icons">whatsapp</span>
-        <a href="https://wa.me/5491171001865" target="_blank">Enviar mensaje por WhatsApp</a>
+        <span class="material-symbols-rounded">call</span>
+        <div>
+          <strong>WhatsApp:</strong><br/>
+          <a href="https://wa.me/5491171001865" target="_blank">+54 9 11 7100 1865</a>
+        </div>
       </div>
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
-  </footer>
+  <a class="whatsapp" href="https://wa.me/5491171001865" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const nav = document.getElementById('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('open');
     });
