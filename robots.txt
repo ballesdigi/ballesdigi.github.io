@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://ballesdigi.github.io/ballesdigi.github.io/sitemap.xml
