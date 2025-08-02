@@ -19,6 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
     .logo {
       font-size: 1.3rem;
@@ -46,8 +47,10 @@
     }
     .menu-toggle {
       display: none;
-      font-size: 2rem;
       cursor: pointer;
+      width: 30px;
+      height: 30px;
+      fill: white;
     }
     .main {
       padding: 2rem;
@@ -58,6 +61,9 @@
       font-size: 2rem;
       color: #003366;
       text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1rem;
     }
     .contacto-info {
       background: white;
@@ -76,6 +82,21 @@
     }
     .material-symbols-rounded {
       font-size: 2rem;
+      color: #0066cc;
+    }
+    .address,
+    .hours {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+      color: #222;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .address strong,
+    .hours strong {
       color: #0066cc;
     }
     .whatsapp {
@@ -116,8 +137,14 @@
 </head>
 <body>
   <header>
-    <div class="logo">💻 Ballester Digital</div>
-    <span class="menu-toggle material-symbols-rounded" tabindex="0">menu</span>
+    <div class="logo">Ballester Digital</div>
+    <span class="menu-toggle" tabindex="0" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">
+        <rect y="4" width="24" height="2" />
+        <rect y="11" width="24" height="2" />
+        <rect y="18" width="24" height="2" />
+      </svg>
+    </span>
     <nav id="nav">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
@@ -126,7 +153,7 @@
   </header>
 
   <div class="main">
-    <h1>Contacto</h1>
+    <h1>CONTACTO</h1>
 
     <div class="contacto-info">
       <div class="info-item">
@@ -144,6 +171,16 @@
           <a href="https://wa.me/5491171001865" target="_blank">+54 9 11 7100 1865</a>
         </div>
       </div>
+    </div>
+
+    <div class="address">
+      <strong>Dirección:</strong><br/>
+      Mar del Plata 4021, Villa Ballester, CP 1653, Buenos Aires, Argentina
+    </div>
+
+    <div class="hours">
+      <strong>Horario de Atención:</strong><br/>
+      Lunes a Viernes de 10:00 a 17:00 hs
     </div>
 
     <div class="map-container">
