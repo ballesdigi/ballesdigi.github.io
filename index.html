@@ -4,30 +4,194 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ballester Digital - Inicio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #0073e6; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; margin-left: 1rem; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 1rem; max-width: 800px; margin: auto; }
-    footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    /* Reset y básicos */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background: #f9faff;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #005bb5;
+    }
+
+    /* Header */
+    header {
+      background: #0073e6;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo .material-icons {
+      font-size: 2rem;
+    }
+    nav a {
+      margin-left: 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    nav a .material-icons {
+      font-size: 1.2rem;
+    }
+
+    /* Main contenido */
+    main {
+      flex-grow: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    main h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #004a99;
+      letter-spacing: 1.5px;
+    }
+    main p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto 3rem auto;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* Servicios destacados en la index */
+    .services-preview {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .service-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      flex: 1 1 250px;
+      max-width: 280px;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+    .service-icon {
+      font-size: 48px;
+      color: #0073e6;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #004a99;
+    }
+    .service-card p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      background: #004a99;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-top: auto;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
+      main h1 {
+        font-size: 2rem;
+      }
+      .services-preview {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-card {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Ballester Digital</div>
+    <div class="logo">
+      <span class="material-icons">desktop_mac</span>
+      Ballester Digital
+    </div>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="index.html"><span class="material-icons">home</span>Inicio</a>
+      <a href="servicios.html"><span class="material-icons">build_circle</span>Servicios</a>
+      <a href="contacto.html"><span class="material-icons">email</span>Contacto</a>
     </nav>
   </header>
 
   <main>
-    <h1>Bienvenidos a Ballester Digital</h1>
+    <h1>Soluciones en reparación y armado de computadoras</h1>
     <p>
-      Reparación de computadoras de escritorio, notebooks, armado a pedido de PC oficina y gamer. Brindamos atención personalizada con diagnósticos precisos y soluciones eficaces. Ofrecemos formateo de equipos, limpieza interna de hardware e instalación de sistemas operativos y software. Además, realizamos mantenimiento preventivo, actualizaciones de hardware y recuperación de datos, siempre con presupuestos claros. Nos comprometemos a entregar equipos optimizados y confiables, adaptados a las necesidades de cada cliente. Ejerciendo desde hace 8 años.
+      Reparación de computadoras de escritorio, notebooks, armado a pedido de PC oficina y gamer. Atención personalizada con diagnósticos precisos y soluciones eficaces. Formateo, limpieza interna, instalación de sistemas operativos y software. Mantenimiento preventivo, actualizaciones de hardware y recuperación de datos. Más de 8 años de experiencia entregando equipos optimizados y confiables.
     </p>
+
+    <div class="services-preview">
+      <div class="service-card">
+        <span class="material-icons service-icon">memory</span>
+        <h3>Reparación de computadoras</h3>
+        <p>Diagnósticos y soluciones efectivas para desktop y notebooks.</p>
+      </div>
+      <div class="service-card">
+        <span class="material-icons service-icon">build</span>
+        <h3>Armado a pedido</h3>
+        <p>PC para oficina y gamer, hechas a medida según tu presupuesto.</p>
+      </div>
+      <div class="service-card">
+        <span class="material-icons service-icon">settings_backup_restore</span>
+        <h3>Formateo e instalación</h3>
+        <p>Formateo, limpieza y configuración de software y sistemas operativos.</p>
+      </div>
+    </div>
   </main>
 
   <footer>
