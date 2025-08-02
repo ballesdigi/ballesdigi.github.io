@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +20,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
     .logo {
       font-size: 1.3rem;
@@ -33,9 +35,16 @@
       text-decoration: none;
       font-weight: 500;
     }
+    nav a:visited {
+      color: white;
+    }
     nav a:hover,
-    nav a.active {
+    nav a:focus {
       text-decoration: underline;
+      color: #e0e0e0;
+    }
+    nav a.active {
+      border-bottom: 2px solid white;
     }
     .menu-toggle {
       display: none;
@@ -44,34 +53,20 @@
     }
     .main {
       padding: 2rem;
-      text-align: center;
+      max-width: 800px;
+      margin: auto;
     }
     .main h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #003366;
+      text-align: center;
     }
     .main p {
       font-size: 1.1rem;
-      max-width: 700px;
-      margin: auto;
+      line-height: 1.6;
+      margin-top: 1.5rem;
+      text-align: center;
     }
-    .servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .servicio {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    .material-symbols-rounded {
-      font-size: 2rem;
-      color: #0066cc;
-    }
-    /* WhatsApp button */
     .whatsapp {
       position: fixed;
       bottom: 15px;
@@ -82,7 +77,6 @@
       width: 60px;
       height: 60px;
     }
-
     @media (max-width: 768px) {
       nav {
         display: none;
@@ -113,37 +107,13 @@
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
-
   <div class="main">
-    <h1>Soluciones en reparación y armado de computadoras</h1>
-    <p>
-      Reparación de computadoras de escritorio, notebooks, armado a pedido de PC oficina y gamer. Atención personalizada con diagnósticos precisos y soluciones eficaces. Formateo, limpieza interna, instalación de sistemas operativos y software. Mantenimiento preventivo, actualizaciones de hardware y recuperación de datos. Más de 8 años de experiencia entregando equipos optimizados y confiables.
-    </p>
-
-    <div class="servicios">
-      <div class="servicio">
-        <span class="material-symbols-rounded">build</span>
-        <p>Reparación técnica</p>
-      </div>
-      <div class="servicio">
-        <span class="material-symbols-rounded">cleaning_services</span>
-        <p>Limpieza interna</p>
-      </div>
-      <div class="servicio">
-        <span class="material-symbols-rounded">memory</span>
-        <p>Actualización de hardware</p>
-      </div>
-      <div class="servicio">
-        <span class="material-symbols-rounded">autorenew</span>
-        <p>Formateo y SO</p>
-      </div>
-    </div>
+    <h1>Soluciones en Tecnología y Reparación</h1>
+    <p>En Ballester Digital brindamos atención personalizada en reparación de computadoras, notebooks y armado de PCs a medida. Nos especializamos en diagnósticos certeros, mantenimientos, mejoras de hardware y limpieza interna. Con más de 8 años de experiencia, garantizamos equipos optimizados y confiables.</p>
   </div>
-
   <a class="whatsapp" href="https://wa.me/5491171001865" target="_blank" aria-label="WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
-
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
