@@ -41,6 +41,8 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      position: relative;
+      z-index: 1000;
     }
     .logo {
       font-weight: 700;
@@ -54,6 +56,10 @@
     .logo .material-icons {
       font-size: 2rem;
     }
+    nav {
+      display: flex;
+      align-items: center;
+    }
     nav a {
       margin-left: 2rem;
       font-weight: 600;
@@ -64,6 +70,22 @@
     }
     nav a .material-icons {
       font-size: 1.2rem;
+    }
+
+    /* Botón hamburguesa */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      justify-content: space-between;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
     }
 
     /* Main contenido */
@@ -138,13 +160,13 @@
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       nav a {
-        margin-left: 1rem;
+        margin-left: 1.5rem;
         font-size: 0.9rem;
       }
       main h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       .services-preview {
         flex-direction: column;
@@ -152,6 +174,34 @@
       }
       .service-card {
         max-width: 100%;
+      }
+    }
+
+    /* Responsive menú hamburguesa */
+    @media (max-width: 600px) {
+      nav {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background: #0073e6;
+        flex-direction: column;
+        width: 200px;
+        padding-top: 1rem;
+        height: calc(100% - 60px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+      }
+      nav.open {
+        transform: translateX(0);
+      }
+      nav a {
+        margin: 1rem 0;
+        font-size: 1.1rem;
+        padding-left: 1.5rem;
+      }
+      .menu-toggle {
+        display: flex;
       }
     }
   </style>
@@ -162,6 +212,13 @@
       <span class="material-icons">desktop_mac</span>
       Ballester Digital
     </div>
+
+    <div class="menu-toggle" aria-label="Abrir menú" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
       <a href="index.html"><span class="material-icons">home</span>Inicio</a>
       <a href="servicios.html"><span class="material-icons">build_circle</span>Servicios</a>
@@ -197,5 +254,22 @@
   <footer>
     <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
   </footer>
+
+  <script>
+    // Toggle menú hamburguesa
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // Accesibilidad teclado para menú
+    menuToggle.addEventListener('keypress', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        nav.classList.toggle('open');
+      }
+    });
+  </script>
 </body>
 </html>
