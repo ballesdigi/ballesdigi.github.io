@@ -2,269 +2,154 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ballester Digital - Inicio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Material+Symbols+Rounded" rel="stylesheet">
   <style>
-    /* Reset y básicos */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
     body {
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
-      background: #f9faff;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fc;
+      color: #222;
     }
-    a {
-      color: #0073e6;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #005bb5;
-    }
-
-    /* Header */
     header {
-      background: #0073e6;
+      background-color: #0066cc;
+      padding: 1rem 1.5rem;
       color: white;
-      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-      position: relative;
-      z-index: 1000;
+      justify-content: space-between;
     }
     .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-      cursor: default;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .logo .material-icons {
-      font-size: 2rem;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
     nav {
       display: flex;
-      align-items: center;
+      gap: 1rem;
     }
     nav a {
-      margin-left: 2rem;
-      font-weight: 600;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
     }
-    nav a .material-icons {
-      font-size: 1.2rem;
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
     }
-
-    /* Botón hamburguesa */
     .menu-toggle {
       display: none;
-      flex-direction: column;
+      font-size: 2rem;
       cursor: pointer;
-      width: 30px;
-      height: 22px;
-      justify-content: space-between;
     }
-    .menu-toggle span {
-      display: block;
-      height: 4px;
-      background: white;
-      border-radius: 2px;
-    }
-
-    /* Main contenido */
-    main {
-      flex-grow: 1;
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+    .main {
+      padding: 2rem;
       text-align: center;
     }
-    main h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #004a99;
-      letter-spacing: 1.5px;
+    .main h1 {
+      font-size: 2rem;
+      color: #003366;
     }
-    main p {
-      font-size: 1.2rem;
-      max-width: 650px;
-      margin: 0 auto 3rem auto;
-      color: #555;
-      line-height: 1.8;
+    .main p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
     }
-
-    /* Servicios destacados en la index */
-    .services-preview {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .service-card {
+    .servicio {
       background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-      flex: 1 1 250px;
-      max-width: 280px;
-      transition: transform 0.3s ease;
-      cursor: default;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    .material-symbols-rounded {
+      font-size: 2rem;
+      color: #0066cc;
     }
-    .service-icon {
-      font-size: 48px;
-      color: #0073e6;
-      margin-bottom: 1rem;
+    /* WhatsApp button */
+    .whatsapp {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 99;
     }
-    .service-card h3 {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #004a99;
-    }
-    .service-card p {
-      color: #666;
-      font-size: 1rem;
-      line-height: 1.5;
+    .whatsapp img {
+      width: 60px;
+      height: 60px;
     }
 
-    /* Footer */
-    footer {
-      background: #004a99;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      margin-top: auto;
-      user-select: none;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      nav a {
-        margin-left: 1.5rem;
-        font-size: 0.9rem;
-      }
-      main h1 {
-        font-size: 2.2rem;
-      }
-      .services-preview {
-        flex-direction: column;
-        align-items: center;
-      }
-      .service-card {
-        max-width: 100%;
-      }
-    }
-
-    /* Responsive menú hamburguesa */
-    @media (max-width: 600px) {
       nav {
-        position: fixed;
+        display: none;
+        flex-direction: column;
+        background-color: #0066cc;
+        position: absolute;
         top: 60px;
         right: 0;
-        background: #0073e6;
-        flex-direction: column;
-        width: 200px;
-        padding-top: 1rem;
-        height: calc(100% - 60px);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+        left: 0;
+        padding: 1rem;
       }
       nav.open {
-        transform: translateX(0);
-      }
-      nav a {
-        margin: 1rem 0;
-        font-size: 1.1rem;
-        padding-left: 1.5rem;
+        display: flex;
       }
       .menu-toggle {
-        display: flex;
+        display: block;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <span class="material-icons">desktop_mac</span>
-      Ballester Digital
-    </div>
-
-    <div class="menu-toggle" aria-label="Abrir menú" role="button" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav>
-      <a href="index.html"><span class="material-icons">home</span>Inicio</a>
-      <a href="servicios.html"><span class="material-icons">build_circle</span>Servicios</a>
-      <a href="contacto.html"><span class="material-icons">email</span>Contacto</a>
+    <div class="logo">💻 Ballester Digital</div>
+    <span class="menu-toggle material-symbols-rounded" tabindex="0">menu</span>
+    <nav id="nav">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
-  <main>
+  <div class="main">
     <h1>Soluciones en reparación y armado de computadoras</h1>
     <p>
       Reparación de computadoras de escritorio, notebooks, armado a pedido de PC oficina y gamer. Atención personalizada con diagnósticos precisos y soluciones eficaces. Formateo, limpieza interna, instalación de sistemas operativos y software. Mantenimiento preventivo, actualizaciones de hardware y recuperación de datos. Más de 8 años de experiencia entregando equipos optimizados y confiables.
     </p>
 
-    <div class="services-preview">
-      <div class="service-card">
-        <span class="material-icons service-icon">memory</span>
-        <h3>Reparación de computadoras</h3>
-        <p>Diagnósticos y soluciones efectivas para desktop y notebooks.</p>
+    <div class="servicios">
+      <div class="servicio">
+        <span class="material-symbols-rounded">build</span>
+        <p>Reparación técnica</p>
       </div>
-      <div class="service-card">
-        <span class="material-icons service-icon">build</span>
-        <h3>Armado a pedido</h3>
-        <p>PC para oficina y gamer, hechas a medida según tu presupuesto.</p>
+      <div class="servicio">
+        <span class="material-symbols-rounded">cleaning_services</span>
+        <p>Limpieza interna</p>
       </div>
-      <div class="service-card">
-        <span class="material-icons service-icon">settings_backup_restore</span>
-        <h3>Formateo e instalación</h3>
-        <p>Formateo, limpieza y configuración de software y sistemas operativos.</p>
+      <div class="servicio">
+        <span class="material-symbols-rounded">memory</span>
+        <p>Actualización de hardware</p>
+      </div>
+      <div class="servicio">
+        <span class="material-symbols-rounded">autorenew</span>
+        <p>Formateo y SO</p>
       </div>
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
-  </footer>
+  <a class="whatsapp" href="https://wa.me/5491171001865" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
   <script>
-    // Toggle menú hamburguesa
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('open');
     });
-
-    // Accesibilidad teclado para menú
     menuToggle.addEventListener('keypress', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         nav.classList.toggle('open');
