@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ballester Digital</title>
+  <style>
+    /* Estilos básicos para que sea responsive */
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #0073e6; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; margin-left: 1rem; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 1rem; }
+    .services { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .service { flex: 1 1 200px; background: #f0f0f0; padding: 1rem; border-radius: 8px; }
+    footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    @media (max-width: 600px) {
+      .services { flex-direction: column; }
+    }
+
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    }
+    .whatsapp-float:hover img {
+      filter: drop-shadow(0 0 5px #25d366);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ballester Digital</div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h1>Bienvenidos a Ballester Digital</h1>
+      <p>Diseño web estático, responsive y hosting con precios competitivos.</p>
+    </section>
+
+    <section class="services">
+      <div class="service">
+        <h2>Diseño Web</h2>
+        <p>Páginas web modernas y adaptables a todos los dispositivos.</p>
+      </div>
+      <div class="service">
+        <h2>Hosting</h2>
+        <p>Alojamiento seguro y confiable para tus sitios web.</p>
+      </div>
+      <div class="service">
+        <h2>Soporte Técnico</h2>
+        <p>Asistencia rápida y personalizada para tu proyecto digital.</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contacto</h2>
+      <form>
+        <label>Nombre:<br /><input type="text" name="name" required></label><br />
+        <label>Email:<br /><input type="email" name="email" required></label><br />
+        <label>Mensaje:<br /><textarea name="message" required></textarea></label><br />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/549XXXXXXXXXX" target="_blank" aria-label="WhatsApp" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+</body>
+</html>
