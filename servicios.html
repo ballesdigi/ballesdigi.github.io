@@ -2,159 +2,162 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ballester Digital - Servicios</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Material+Symbols+Rounded" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f9faff;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fc;
+      color: #222;
     }
-    a { text-decoration: none; color: #0073e6; }
     header {
-      background: #0073e6;
+      background-color: #0066cc;
+      padding: 1rem 1.5rem;
       color: white;
-      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      position: relative;
+      justify-content: space-between;
     }
     .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
     }
     nav a {
       color: white;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+      text-decoration: none;
+      font-weight: 500;
     }
-
-    .menu-icon {
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
+    }
+    .menu-toggle {
       display: none;
       font-size: 2rem;
       cursor: pointer;
     }
-
+    .main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .main h1 {
+      font-size: 2rem;
+      color: #003366;
+      text-align: center;
+    }
+    .servicio {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .material-symbols-rounded {
+      font-size: 2rem;
+      color: #0066cc;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 99;
+    }
+    .whatsapp img {
+      width: 60px;
+      height: 60px;
+    }
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
-        background: #0073e6;
+        background-color: #0066cc;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
-        width: 100%;
+        left: 0;
         padding: 1rem;
       }
       nav.open {
         display: flex;
       }
-      .menu-icon {
+      .menu-toggle {
         display: block;
       }
-    }
-
-    main {
-      flex-grow: 1;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.5rem;
-      color: #004a99;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .service {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .service h3 {
-      margin-bottom: 0.5rem;
-      color: #0073e6;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .service p {
-      color: #555;
-    }
-
-    footer {
-      background: #004a99;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      margin-top: auto;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <span class="material-icons">desktop_mac</span>
-      Ballester Digital
-    </div>
-    <span class="material-icons menu-icon" id="menuToggle">menu</span>
+    <div class="logo">💻 Ballester Digital</div>
+    <span class="menu-toggle material-symbols-rounded" tabindex="0">menu</span>
     <nav id="nav">
-      <a href="index.html"><span class="material-icons">home</span>Inicio</a>
-      <a href="servicios.html"><span class="material-icons">build_circle</span>Servicios</a>
-      <a href="contacto.html"><span class="material-icons">email</span>Contacto</a>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html" class="active">Servicios</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
-  <main>
-    <h1>Servicios</h1>
-    <div class="service">
-      <h3><span class="material-icons">settings</span>Reparación de computadoras</h3>
-      <p>Diagnóstico y solución de fallas en equipos de escritorio y notebooks.</p>
-    </div>
-    <div class="service">
-      <h3><span class="material-icons">memory</span>Armado de PC a medida</h3>
-      <p>PC para oficina o gaming según tu presupuesto y necesidades.</p>
-    </div>
-    <div class="service">
-      <h3><span class="material-icons">cleaning_services</span>Limpieza y mantenimiento</h3>
-      <p>Limpieza interna de hardware y mantenimiento preventivo.</p>
-    </div>
-    <div class="service">
-      <h3><span class="material-icons">restart_alt</span>Formateo e instalación</h3>
-      <p>Formateo, instalación de sistemas operativos y software.</p>
-    </div>
-    <div class="service">
-      <h3><span class="material-icons">backup</span>Recuperación de datos</h3>
-      <p>Intentos de recuperación de datos en discos dañados o formateados.</p>
-    </div>
-  </main>
+  <div class="main">
+    <h1>Servicios que ofrecemos</h1>
 
-  <footer>
-    <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
-  </footer>
+    <div class="servicio">
+      <span class="material-symbols-rounded">build</span>
+      <div>
+        <strong>Reparación técnica</strong><br/>
+        Diagnóstico y solución de fallas en notebooks y PCs.
+      </div>
+    </div>
+
+    <div class="servicio">
+      <span class="material-symbols-rounded">cleaning_services</span>
+      <div>
+        <strong>Limpieza interna</strong><br/>
+        Eliminación de polvo, cambio de pasta térmica y mantenimiento.
+      </div>
+    </div>
+
+    <div class="servicio">
+      <span class="material-symbols-rounded">memory</span>
+      <div>
+        <strong>Actualización de hardware</strong><br/>
+        Instalación de discos SSD, memorias RAM, placas de video y más.
+      </div>
+    </div>
+
+    <div class="servicio">
+      <span class="material-symbols-rounded">autorenew</span>
+      <div>
+        <strong>Formateo e instalación</strong><br/>
+        Instalación limpia de sistemas operativos y software esenciales.
+      </div>
+    </div>
+
+    <div class="servicio">
+      <span class="material-symbols-rounded">cloud_download</span>
+      <div>
+        <strong>Recuperación de datos</strong><br/>
+        Rescate de archivos borrados, dañados o inaccesibles.
+      </div>
+    </div>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/5491171001865" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const nav = document.getElementById('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('open');
     });
