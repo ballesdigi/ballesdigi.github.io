@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ballester Digital - Contacto</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #0073e6; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; margin-left: 1rem; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 1rem; max-width: 600px; margin: auto; }
+    footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    .contact-info { margin-bottom: 2rem; }
+    .contact-info p { margin: 0.5rem 0; }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    }
+    .whatsapp-float:hover img {
+      filter: drop-shadow(0 0 5px #25d366);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ballester Digital</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contacto</h1>
+    <section class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:ballesterdigital@gmail.com">ballesterdigital@gmail.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5491171001865" target="_blank">+54 9 11 7100 1865</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ballester Digital - contacto@ballesterdigital.com.ar</p>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5491171001865" target="_blank" aria-label="WhatsApp" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+</body>
+</html>
