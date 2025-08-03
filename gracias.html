@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¡Gracias por tu consulta! | Ballester Digital</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Mensaje de agradecimiento por tu consulta en Ballester Digital." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">BALLESTER DIGITAL</div>
+    <nav id="nav" aria-label="Menú de navegación">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a href="index.html#ubicacion">Ubicación</a>
+    </nav>
+  </header>
+  <main>
+    <section style="text-align:center; padding-top:4rem;">
+      <h1>¡Gracias por tu consulta!</h1>
+      <h2>Recibimos tu mensaje</h2>
+      <p>Te contactaremos a la brevedad.<br>
+        Si tu consulta es urgente, podés escribirnos directamente a nuestro <a href="https://wa.me/5491171001865" style="color:#0066cc; text-decoration:underline;">WhatsApp</a>.<br>
+        <br>¡Gracias por confiar en Ballester Digital!</p>
+      <a href="index.html" style="display:inline-block; margin-top:2rem; background:#0066cc; color:white; padding:0.8rem 2rem; border-radius:5px; text-decoration:none; font-weight:700; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:background 0.2s;">Volver al inicio</a>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <a href="faq.html">Preguntas frecuentes</a>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="index.html">Inicio</a>
+    </div>
+    <div class="footer-contact">
+      <span class="material-symbols-rounded" aria-label="Email">mail</span>
+      <a href="mailto:ballesterdigital@gmail.com">ballesterdigital@gmail.com</a>
+      <span class="material-symbols-rounded" aria-label="WhatsApp">call</span>
+      <a href="https://wa.me/5491171001865" target="_blank">+54 9 11 7100 1865</a>
+      <span class="material-symbols-rounded" aria-label="Ubicación">location_on</span>
+      <span>Mar del Plata 4021, Villa Ballester, Buenos Aires</span>
+    </div>
+    <div class="footer-copy">
+      &copy; Ballester Digital <span id="year"></span>
+    </div>
+  </footer>
+  <a class="whatsapp" href="https://wa.me/5491171001865" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
