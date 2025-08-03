@@ -1,97 +1,129 @@
 /* Importar fuentes desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=Merriweather+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:wght@400;700&display=swap');
 
-/* Por defecto: Merriweather Sans para texto, IBM Plex Sans Bold para títulos */
-/* Para cambiar a Fjalla One solo reemplaza el font-family de los títulos abajo por 'Fjalla One', según tu preferencia */
+/* SOLO CAMBIO DE FUENTES */
+body, p, li, a, .footer-copy {
+  font-family: 'Merriweather Sans', Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .logo, .footer-col h3 {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-weight: 700;
+}
 
-/* Reset básico y body */
+/* RESTO DE TU CSS ORIGINAL SIN MODIFICAR */
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Merriweather Sans', Arial, sans-serif;
-  font-size: 1rem;
+  background: #f8f9fc;
   color: #222;
-  background: #fafbfc;
-  line-height: 1.6;
+  scroll-behavior: smooth;
 }
-
-/* Títulos principales */
-h1, h2, h3, h4, h5, h6, .logo, .footer-col h3 {
-  font-family: 'IBM Plex Sans', Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #0066cc;
-  margin-top: 0;
+header {
+  background-color: #0066cc;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
 }
-
-/* Si prefieres Fjalla One para títulos, reemplaza arriba por: */
-/*
-h1, h2, h3, h4, h5, h6, .logo, .footer-col h3 {
-  font-family: 'Fjalla One', Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #0066cc;
-  margin-top: 0;
-}
-*/
-
-/* Enlaces */
-a {
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-a:hover,
-a:focus {
-  text-decoration: underline;
-  color: #004a99;
-  outline: 2px solid #004a99;
-}
-
-/* Header y logo */
 .logo {
-  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.5rem;
-  color: #004a99;
-  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 1.4rem;
+  user-select: none;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  width: 100%;
 }
-
-/* Menú de navegación */
 nav {
   display: flex;
   gap: 1.2rem;
-  margin-bottom: 1.5rem;
+  justify-content: center;
+  width: 100%;
 }
 nav a {
-  font-family: 'Merriweather Sans', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.2rem 0.3rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+nav a:hover,
+nav a:focus {
+  border-bottom: 2px solid #e0e0e0;
+  outline: 2px solid #004a99;
 }
 nav a.active {
-  background: #e7f0fc;
-  color: #004a99;
+  border-bottom: 2px solid white;
 }
-
-/* Sección de servicios */
+main {
+  padding-top: 90px;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #ddd;
+  scroll-margin-top: 100px;
+}
+section:last-child {
+  border: none;
+}
+h1, h2 {
+  color: #003366;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+h1 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 1.9rem;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+}
+.servicios-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.2rem;
+}
+@media (min-width: 600px) {
+  .servicios-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .servicios-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .servicio {
   background: white;
   border-radius: 8px;
+  padding: 1rem 1.2rem;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   transition: box-shadow 0.3s;
-  margin-bottom: 1rem;
 }
 .servicio:hover {
   box-shadow: 0 3px 15px rgba(0,0,0,0.15);
@@ -110,8 +142,6 @@ nav a.active {
   text-align: center;
   margin-top: 2rem;
 }
-
-/* Contacto */
 .contacto-info {
   background: white;
   border-radius: 8px;
@@ -119,16 +149,122 @@ nav a.active {
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-bottom: 2rem;
+  gap: 1.4rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #222;
+  font-size: 1rem;
 }
 .info-item {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
-/* Footer columnas actualizado */
+.material-symbols-rounded {
+  font-size: 2.2rem;
+  color: #0066cc;
+  flex-shrink: 0;
+}
+.info-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.info-item a:hover,
+.info-item a:focus {
+  text-decoration: underline;
+  outline: 2px solid #004a99;
+}
+.map-container {
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+.map-link {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+.btn-mapa {
+  background: #0066cc;
+  color: #fff;
+  padding: 0.4rem 1.1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.15s;
+  margin-right: 0.1rem;
+  display: inline-block;
+}
+.btn-mapa:hover,
+.btn-mapa:focus {
+  background: #004a99;
+  outline: 2px solid #004a99;
+}
+.btn-footer {
+  background: #0066cc;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 0.4rem;
+  margin-top: 0.3rem;
+  transition: background 0.15s;
+  display: inline-block;
+}
+.btn-footer:hover,
+.btn-footer:focus {
+  background: #004a99;
+  outline: 2px solid #004a99;
+}
+.icon-social {
+  vertical-align: middle;
+  width: 26px;
+  height: 26px;
+  margin: 0 3px 0 0;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.2s;
+}
+.icon-social:hover,
+.icon-social:focus {
+  box-shadow: 0 0 8px #4285f4;
+  outline: 2px solid #4285f4;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 101;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  animation: bounce 1.5s infinite;
+}
+.whatsapp img {
+  width: 100%;
+  height: 100%;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 footer {
   background: #eeeeee;
   color: #222;
@@ -170,8 +306,7 @@ footer {
   text-decoration: underline;
   outline: 2px solid #004a99;
 }
-/* Iconos sociales */
-.icon-social {
+.footer-col .icon-social {
   vertical-align: middle;
   width: 26px;
   height: 26px;
@@ -181,8 +316,8 @@ footer {
   border: 1px solid #e0e0e0;
   transition: box-shadow 0.2s;
 }
-.icon-social:hover,
-.icon-social:focus {
+.footer-col .icon-social:hover,
+.footer-col .icon-social:focus {
   box-shadow: 0 0 8px #4285f4;
   outline: 2px solid #4285f4;
 }
@@ -192,39 +327,47 @@ footer {
   color: #555;
   text-align: center;
 }
-
-/* Responsive footer columnas */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .footer-columns {
     flex-direction: column;
     gap: 1.2rem;
     max-width: 100%;
+    padding: 0;
   }
   .footer-col {
-    min-width: 100%;
+    min-width: unset;
+    margin-bottom: 0.8rem;
   }
 }
-
-/* Botón WhatsApp flotante con animación */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 101;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  animation: bounce 1.5s infinite;
-}
-.whatsapp img {
-  width: 100%;
-  height: 100%;
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
-  50% {
-    transform: translateY(-10px);
+  nav {
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    padding-bottom: 0.2rem;
   }
+  main {
+    padding-top: 120px;
+  }
+  section {
+    scroll-margin-top: 130px;
+  }
+  .footer-columns {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 100%;
+    padding: 0;
+  }
+  .footer-col {
+    min-width: unset;
+    margin-bottom: 0.8rem;
+  }
+}
+a:focus, button:focus {
+  outline: 2px solid #004a99 !important;
+  outline-offset: 2px;
 }
