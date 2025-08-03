@@ -7,37 +7,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Material+Symbols+Rounded" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #fff;
-      color: #222;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
     }
-    header {
-      background: #000;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
+
     nav {
       display: flex;
-      justify-content: center;
       gap: 1rem;
+      justify-content: center;
       background: #111;
       padding: 0.5rem;
       flex-wrap: wrap;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       padding: 0.5rem 1rem;
       border-radius: 5px;
-      transition: background 0.3s;
     }
-    nav a:hover,
+
     nav a.active {
       background: #333;
     }
 
+    /* Botón de consulta */
     .consulta-btn {
       background: yellow;
       color: black !important;
@@ -47,120 +43,97 @@
       border: 2px solid black;
       transition: background 0.3s, color 0.3s;
     }
-    .consulta-btn:hover,
-    .consulta-btn:focus {
+
+    .consulta-btn:hover {
       background: black;
       color: yellow !important;
     }
 
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
+    /* Footer carrusel */
     .footer-carrusel {
-      background: #f1f1f1;
-      padding: 2rem 0;
+      background: #fff;
+      padding: 1rem 0;
       overflow: hidden;
       border-top: 1px solid #ccc;
     }
-    .carrusel-container {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-    }
+
     .carrusel-slide {
       display: flex;
+      gap: 2rem;
+      animation: scroll 40s linear infinite;
       align-items: center;
-      gap: 3rem;
-      animation: scroll-logos 30s linear infinite;
-    }
-    .carrusel-slide img {
-      height: 50px;
-      width: auto;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: filter 0.3s, opacity 0.3s;
-    }
-    .carrusel-slide img:hover {
-      filter: none;
-      opacity: 1;
-    }
-    @keyframes scroll-logos {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+    .carrusel-slide img {
+      height: 40px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .carrusel-slide img:hover {
+      opacity: 1;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ballester DigitaL</h1>
-  </header>
 
-  <nav id="nav" aria-label="Menú de navegación">
+  <!-- Menú de navegación con botón -->
+  <nav id="nav">
     <a href="https://forms.gle/7xbCi2wowL1PVqvs8" target="_blank" class="consulta-btn">Enviar consulta</a>
     <a href="#inicio" class="active">Inicio</a>
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
+  <!-- Acá va tu contenido principal -->
   <main>
     <section id="inicio">
-      <h2>Bienvenido a Ballester Digital</h2>
-      <p>Tu solución en tecnología, reparación y sitios web.</p>
+      <h1>Bienvenido a Ballester Digital</h1>
+      <p>Servicios profesionales de informática y tecnología.</p>
     </section>
 
     <section id="servicios">
       <h2>Servicios</h2>
       <ul>
         <li>Reparación de PC</li>
-        <li>Formateo e instalación de sistemas</li>
-        <li>Instalación de programas</li>
-        <li>Limpieza de virus</li>
-        <li>Creación de páginas web</li>
-        <li>Hosting personalizado</li>
+        <li>Formateo y backup</li>
+        <li>Instalación de sistemas</li>
+        <li>Optimización y limpieza de virus</li>
+        <li>Asesoramiento técnico</li>
       </ul>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
-      <p>📍 Mar del Plata 4021, Villa Ballester, CP 1653, Buenos Aires</p>
-      <p>📧 ballesterdigital@gmail.com</p>
-      <p>📱 <a href="https://wa.me/5491171001865" target="_blank">+54 9 11 7100 1865 (WhatsApp)</a></p>
+      <p>Correo: ballesterdigital@gmail.com</p>
+      <p>WhatsApp: +54 9 11 7100 1865</p>
     </section>
   </main>
 
+  <!-- Carrusel en el footer -->
   <footer class="footer-carrusel">
-    <div class="carrusel-container">
-      <div class="carrusel-slide">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/AMD_Logo.svg" alt="AMD">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Intel_logo_2020.svg" alt="Intel">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Nvidia_logo.svg" alt="NVIDIA">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Logo-ubuntu_cof-orange-hex.svg" alt="Ubuntu">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Debian_logo.svg" alt="Debian">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg" alt="Linux Mint">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Windows_logo_-_2021.svg" alt="Windows">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Microsoft_Office_logo_%282019–present%29.svg" alt="Office">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Seagate_Technology_logo.svg" alt="Seagate">
-        <!-- Repetidos para scroll infinito -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/AMD_Logo.svg" alt="AMD">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Intel_logo_2020.svg" alt="Intel">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Nvidia_logo.svg" alt="NVIDIA">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Logo-ubuntu_cof-orange-hex.svg" alt="Ubuntu">
-      </div>
+    <div class="carrusel-slide">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/AMD_Logo.svg" alt="AMD">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Intel_logo_2020.svg" alt="Intel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Nvidia_logo.svg" alt="NVIDIA">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Logo-ubuntu_cof-orange-hex.svg" alt="Ubuntu">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Debian_logo.svg" alt="Debian">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg" alt="Linux Mint">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Windows_logo_-_2021.svg" alt="Windows">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Microsoft_Office_logo_%282019–present%29.svg" alt="Office">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Seagate_Technology_logo.svg" alt="Seagate">
+
+      <!-- Repetición para efecto de scroll continuo -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/AMD_Logo.svg" alt="AMD">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Intel_logo_2020.svg" alt="Intel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Nvidia_logo.svg" alt="NVIDIA">
     </div>
   </footer>
+
 </body>
 </html>
