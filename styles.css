@@ -64,6 +64,7 @@ main {
 section {
   padding: 3rem 0;
   border-bottom: 1px solid #ddd;
+  scroll-margin-top: 100px; /* Fix: ensures section titles are not hidden under header */
 }
 section:last-child {
   border: none;
@@ -365,6 +366,9 @@ footer {
   }
   main {
     padding-top: 120px;
+  }
+  section {
+    scroll-margin-top: 130px;
   }
   .footer-columns {
     flex-direction: column;
